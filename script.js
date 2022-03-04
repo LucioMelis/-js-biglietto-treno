@@ -23,16 +23,19 @@ const discountMinors = ticketPrice * 20 / 100;
 const discountOver65 = ticketPrice * 40 / 100;
 
 
-if (ageUser >= 18) {
-    console.log('Sei Maggiorenne');
-} else {
-    console.log('Sei Minorenne');
-}
 
 if (ageUser >= 65) {
-    console.log('Hai Diritto allo sconto del 40%');
+    console.log('Over 65, hai Diritto allo sconto del 40%');
     const priceFinal = ticketPrice - discountOver65;
-    console.log('Il prezzo del biglietto è:' + priceFinal + '€');
+    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
+} else if (ageUser < 18) {
+    console.log('Sei Minorenne e hai Diritto allo sconto del 20%');
+    const priceFinal = ticketPrice - discountMinors;
+    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
+} else {
+    console.log('Sei Maggiorenne');
+    const priceFinal = ticketPrice;
+    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
 }
 
 

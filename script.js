@@ -12,31 +12,33 @@ L'output del prezzo finale va messo fuori in forma umana
 console.log('Js Ok');
 
 // Variabile Numero chilometri
-const kilometresUser = prompt('Indica il numero dei chilometri che vuoi percorrere');
+const kilometerUser = parseInt(prompt('Indica il numero dei chilometri che vuoi percorrere'));
 // Variabile Anni dell'utente 
-const ageUser = prompt('Quanti anni hai?');
+const ageUser = parseInt(prompt('Quanti anni hai?'));
 // Variabile prezzo del biglietto 
-const ticketPrice = 0.21 * kilometresUser;
+const ticketPrice = 0.21 * kilometerUser;
 // Variabile sconto minorenni
 const discountMinors = ticketPrice * 20 / 100;
 // Variabile sconto over 65
 const discountOver65 = ticketPrice * 40 / 100;
-
-
+// Variabile prezzo finale 
+let priceFinal;
 
 if (ageUser >= 65) {
     console.log('Over 65, hai Diritto allo sconto del 40%');
-    const priceFinal = ticketPrice - discountOver65;
+    priceFinal = ticketPrice - discountOver65;
     console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
 } else if (ageUser < 18) {
     console.log('Sei Minorenne e hai Diritto allo sconto del 20%');
-    const priceFinal = ticketPrice - discountMinors;
+    priceFinal = ticketPrice - discountMinors;
     console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
 } else {
     console.log('Sei Maggiorenne');
-    const priceFinal = ticketPrice;
+    priceFinal = ticketPrice;
     console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
 }
+// Scrittura HTML 
+document.getElementById('pricefinal').innerText = `Il prezzo del biglietto è: ${priceFinal} €`;
 
 
 

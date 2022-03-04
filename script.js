@@ -15,26 +15,26 @@ console.log('Js Ok');
 const kilometresUser = prompt('Indica il numero dei chilometri che vuoi percorrere');
 // Variabile Anni dell'utente 
 const ageUser = prompt('Quanti anni hai?');
-// Variabile sconto minorenni
-const discountMinors = ((ticketPrice * 20) / 100);
-// Variabile sconto over 65
-const discountOver65 = ((ticketPrice * 40) / 100);
 // Variabile prezzo del biglietto 
 const ticketPrice = 0.21 * kilometresUser;
+// Variabile sconto minorenni
+const discountMinors = ticketPrice * 20 / 100;
+// Variabile sconto over 65
+const discountOver65 = ticketPrice * 40 / 100;
+
 
 if (ageUser >= 18) {
     console.log('Sei Maggiorenne');
-} else if (ageUser >= 18 && ageUser >= 65) {
-    console.log('Hai diritto ad uno sconto del 40%');
-    const priceFinal = ticketPrice - discountOver65;
-    console.log(priceFinal);
 } else {
-    console
+    console.log('Sei Minorenne');
 }
 
-// ageUser >= 65
+if (ageUser >= 65) {
+    console.log('Hai Diritto allo sconto del 40%');
+    const priceFinal = ticketPrice - discountOver65;
+    console.log('Il prezzo del biglietto è:' + priceFinal + '€');
+}
 
-// const priceFinal = ticketPrice - discountMinors;
-// console.log(priceFinal);
 
-// console.log('Sei Minorenne');
+
+

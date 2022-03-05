@@ -20,6 +20,7 @@ div{
     height: 100vh;
     width: 700px;
     background-image: url(img/nuovo-frecciarossa-milano-parigi-res.jpg);
+    background-repeat: no-repeat;
 }
 
 .tracking-in-expand {

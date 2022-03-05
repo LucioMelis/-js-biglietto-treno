@@ -24,21 +24,21 @@ const discountOver65 = ticketPrice * 40 / 100;
 // Variabile prezzo finale 
 let priceFinal;
 
-if (ageUser >= 65) {
+if (ageUser >= 66) {
     console.log('Over 65, hai Diritto allo sconto del 40%');
     priceFinal = ticketPrice - discountOver65;
-    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
+    console.log(`Il prezzo del biglietto è: ${priceFinal.toFixed(2)} €`);
 } else if (ageUser < 18) {
     console.log('Sei Minorenne e hai Diritto allo sconto del 20%');
     priceFinal = ticketPrice - discountMinors;
-    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
+    console.log(`Il prezzo del biglietto è: ${priceFinal.toFixed(2)} €`);
 } else {
     console.log('Sei Maggiorenne');
     priceFinal = ticketPrice;
-    console.log(`Il prezzo del biglietto è: ${priceFinal} €`);
+    console.log(`Il prezzo del biglietto è: ${priceFinal.toFixed(2)} €`);
 }
 // Scrittura HTML 
-document.getElementById('pricefinal').innerText = `Il prezzo del biglietto è: ${priceFinal} €`;
+document.getElementById('pricefinal').innerText = `Il prezzo del biglietto è di ${priceFinal.toFixed(2)} €`;
 
 
 
